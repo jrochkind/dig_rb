@@ -1,4 +1,4 @@
-[![Gem Version](https://badge.fury.io/rb/dig_rb.svg)](https://badge.fury.io/rb/dig_rb) 
+[![Gem Version](https://badge.fury.io/rb/dig_rb.svg)](https://badge.fury.io/rb/dig_rb) [![Build Status](https://travis-ci.org/jrochkind/dig_rb.svg?branch=master)](https://travis-ci.org/jrochkind/dig_rb)
 
 # Dig_rb
 
