@@ -14,6 +14,8 @@ Dig_rb is tested with:
 * [Ruby Spec Suite](https://github.com/ruby/spec/) specs found in repo for Array and Hash#dig
 * All examples in MRI 2.3.0 generated method API docs. (One example in MRI 2.3.0 is _wrong_ about exception class/method returned, dig_rb matches actual 2.3.0 behavior there, not documented example)
 
+[Our travis](https://travis-ci.org/jrochkind/dig_rb) runs tests on a variety of ruby platforms. 
+
 If you find any weird edge cases that work differenty in MRI 2.3.0 than in ruby_dig, let me know in a GitHub Issue please.
 
 The performance of dig_rb will probably be less than native MRI 2.3.0 implementation, this code is not written for performance. But it should
