@@ -1,10 +1,21 @@
-# DigRb
+# Dig_rb
 
 [Ruby 2.3.0 introduced #dig on Hash, Array, and Struct](https://www.ruby-lang.org/en/news/2015/12/25/ruby-2-3-0-released/). With this gem, you can have dig on ruby pre 2.3.0, or any ruby lacking dig.
 
 If you are writing an app and want to use dig in it you should probably just upgrade to ruby 2.3.0. But if you are writing a gem and want it to work with both MRI 2.3.0 and others, this gem is for you. This gem only adds #dig methods if they aren't already defined, so it's safe to use in code that is for all rubies, if run on MRI 2.3.0 you'll still be using native #dig, otherwise dig_rb's implementation.
 
-This code passes all tests I could find for 2.3.0 dig, as well as all examples from 2.3.0 docs. (Except for one example in 2.3.0 docs that was wrong! A wrong example in docs does not give me complete confidence, this code may fail on some edge cases I don't know about, if you find one do let me know in an Issue.)
+## Will it work identically to MRI 2.3.0 dig?
+
+Dig_rb is tested with:
+
+* Specs found in MRI repo for #dig in 2.3.0
+* [Ruby Spec Suite](https://github.com/ruby/spec/) specs found in repo for Array and Hash#dig
+* All examples in MRI 2.3.0 generated method API docs. (One example in MRI 2.3.0 is _wrong_ about exception class/method returned, dig_rb matches actual 2.3.0 behavior there, not documented example)
+
+If you find any weird edge cases that work differenty in MRI 2.3.0 than in ruby_dig, let me know in a GitHub Issue please.
+
+The performance of dig_rb will probably be less than native MRI 2.3.0 implementation, this code is not written for performance. But it should
+be fine, really.
 
 ## Installation
 
@@ -24,7 +35,7 @@ Or install it yourself as:
 
 ## Usage
 
-Just go ahead and use #dig as doc'd in MRI 2.3.0:
+Just go ahead and use #dig as doc'd in MRI 2.3.0, now it'll work on any ruby.
 
 * [Hash](http://ruby-doc.org/core-2.3.0/Hash.html#method-i-dig)
 * [Array](http://ruby-doc.org/core-2.3.0/Array.html#method-i-dig)
