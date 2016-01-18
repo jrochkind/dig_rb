@@ -4,3 +4,4 @@ require 'dig_rb'
 require 'byebug'
 
 require 'minitest/autorun'
+require 'minitest/spec'
