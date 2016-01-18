@@ -17,7 +17,7 @@ describe "Array#dig" do
   it "raises without any args" do
     e = assert_raises(ArgumentError) { [10].dig() }
     # jrochkind added...
-    assert e.message =~ /\Awrong number of arguments/
+    assert_match /\Awrong number of arguments/, e.message
   end
 
   it "calls #dig on the result of #at with the remaining arguments" do
