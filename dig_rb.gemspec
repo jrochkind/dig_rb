@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jonathan Rochkind"]
   spec.email         = ["jonathan@dnil.net"]
 
-  spec.summary       = %q{Array/Hash/Struct#dig backfill for ruby}
+  spec.summary       = %q{Array/Hash/Struct/OpenStruct#dig backfill for ruby}
   spec.homepage      = "https://github.com/jrochkind/dig_rb"
   spec.license       = "MIT"
 
