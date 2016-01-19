@@ -1,4 +1,3 @@
-require 'ostruct'
 unless Struct.respond_to?(:dig)
   Struct.class_eval do
 
