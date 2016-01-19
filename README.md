@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/dig_rb.svg)](https://badge.fury.io/rb/dig_rb) [![Build Status](https://travis-ci.org/jrochkind/dig_rb.svg?branch=master)](https://travis-ci.org/jrochkind/dig_rb)
 
-[Ruby 2.3.0 introduced #dig on Hash, Array, and Struct](https://www.ruby-lang.org/en/news/2015/12/25/ruby-2-3-0-released/). With this gem, you can have dig on ruby pre 2.3.0, or any ruby lacking dig.
+[Ruby 2.3.0 introduced #dig on Hash, Array, Struct and OpenStruct](https://www.ruby-lang.org/en/news/2015/12/25/ruby-2-3-0-released/). With this gem, you can have dig on ruby pre 2.3.0, or any ruby lacking dig.
 
 If you are writing an app and want to use dig in it you should probably just upgrade to ruby 2.3.0. But if you are writing a gem and want it to work with both MRI 2.3.0 and others (including JRuby 9.0.x), this gem is for you. This gem only adds #dig methods if they aren't already defined, so it's safe to use in code that is for all rubies, if run on MRI 2.3.0 you'll still be using native #dig, otherwise dig_rb's implementation.
 
