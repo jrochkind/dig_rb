@@ -1,4 +1,4 @@
-unless Struct.respond_to?(:dig)
+unless Struct.instance_methods.include?(:dig)
   Struct.class_eval do
 
     # Extracts the nested value specified by the sequence of <i>idx</i>
