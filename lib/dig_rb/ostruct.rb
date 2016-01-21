@@ -1,5 +1,5 @@
 require 'ostruct'
-unless OpenStruct.respond_to?(:dig)
+unless OpenStruct.instance_methods.include?(:dig)
   OpenStruct.class_eval do
     #
     # Retrieves the value object corresponding to the each +name+

@@ -1,4 +1,4 @@
-unless Array.respond_to?(:dig)
+unless Array.instance_methods.include?(:dig)
   Array.class_eval do
     def dig(key, *args)
       value = self.at(key)

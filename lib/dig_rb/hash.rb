@@ -1,4 +1,4 @@
-unless Hash.respond_to?(:dig)
+unless Hash.instance_methods.include?(:dig)
   Hash.class_eval do
     # Retrieves the value object corresponding to the each key objects repeatedly.
     #
