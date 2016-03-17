@@ -10,14 +10,17 @@ unless Struct.instance_methods.include?(:dig)
 
     #    o.dig(:a, :a, :b, 0)              #=> 1
     #    o.dig(:b, 0)                      #=> nil
-    def dig(name, *args)
-      begin
-        name = name.to_sym
-      rescue NoMethodError
-        raise TypeError, "#{name} is not a symbol nor a string"
-      end
-      return nil unless self.respond_to?(name)
-      value = self.send(name)
+    def dig(key, *args)
+      value = if key.respond_to?(:to_sym)
+                return nil unless self.respond_to?(key.to_sym)
+                self.send(key.to_sym)
+              elsif key.respond_to?(:to_int)
+                return nil unless self.length >= key.to_int + 1
+                self[key.to_int]
+              else
+                raise TypeError, "no implicit conversion of #{key.class} into Integer"
+              end
+
       return value if args.length == 0 || value.nil?
       DigRb.guard_dig(value)
       value.dig(*args)

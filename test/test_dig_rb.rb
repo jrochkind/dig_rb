@@ -67,6 +67,18 @@ class TestDigRb < Minitest::Test
     assert_nil(o.dig(:b, 0))
   end
 
+  # Not covered by any tests, but actual behavior.
+  # https://github.com/jrochkind/dig_rb/issues/5
+  def test_struct_supports_array_access
+    klass = Struct.new(:a, :b)
+    o = klass.new(:first, :second)
+
+    assert_equal(:second, o.dig(1))
+    assert_nil(o.dig(2))
+
+    e = assert_raises(TypeError) { o.dig(Object.new) }
+  end
+
   # https://github.com/ruby/ruby/blob/a837be87fdf580ac4fd58c4cb2f1ee16bab11b99/test/ostruct/test_ostruct.rb#L112
   def test_ostruct
     os1 = OpenStruct.new
